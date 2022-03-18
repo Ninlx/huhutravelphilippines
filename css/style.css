@@ -49,6 +49,10 @@ section{
     padding: 5rem 10%;
 }
 
+body{
+    height: 200rem;
+}
+
 /* --------------------------------- global class section --------------------------------- */
 
 .btn{
