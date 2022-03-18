@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+    text-decoration: none;
+    outline: none; border: none;
+    transition: all .2s ease-in-out;
+    list-style: none;
+}
+
+:root{
+    --main-color: #8e44ad;
+    --black: #222;
+    --white: #ffffff;
+    --grey: #b9b9b9;
+    --orange: #ffa500;
+    --box-shadow: .7rem .7rem .7rem rgba(0,0,0,0.3);
+    --text-shadow: .2rem .2rem .1rem rgba(0,0,0,0.3);
+}
+
+html::-webkit-scrollbar{
+    width: 1.2rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: black;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+*::selection{
+    background: var(--main-color);
+    color: var(--white);
+}
+
+section{
+    padding: 5rem 10%;
+}
+
+/* --------------------------------- global class section --------------------------------- */
+
+.btn{
+    display: inline-block;
+    background: var(--orange);
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--main-color);
+    color: var(--white);
+}
+
+/* --------------------------------- header section --------------------------------- */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 2rem 10%;
+    background: var(--white);
+    z-index: 5;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a{
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.header .logo span{
+    font-weight: bolder;
+}
+
+.header .navbar ul li{
+    display: inline-block;
+}
+
+.header .navbar ul li.active a{
+    margin: 0 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    padding-top: .5rem;
+    padding-right: 1.7rem;
+    padding-left: 2rem;
+    padding-bottom: .5rem;
+    background: var(--black);
+    border-radius: 5rem;
+    color: var(--white);
+}
+
+.header .navbar ul li a{
+    margin: 0 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    color: var(--black);
+}
+
+.header .icons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    position: relative;
+}
+
+.header .icons::before{
+    content: '';
+    height: .7rem; width: 20rem;
+    background: var(--main-color);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 5rem;
+}
+
+.header .icons .icons-box{
+    background: var(--orange);
+    height: 4.5rem; width: 4.5rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .icons .icons-box i{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.header .icons .icons-box i:hover{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------- search container section --------------------------------- */
+
+.search-container{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.search-container.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#search-btn.active{
+    transform: rotate(360deg);
+    color: red;
+}
+
+.search-container .search-wrapper{
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 5rem;
+    box-sizing: var(--box-shadow);
+}
+
+.search-container .search-wrapper input{
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-right: 5rem;
+    padding-bottom: 1.2rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.search-container .search-wrapper input::placeholder{
+    color: var(--black);
+}
+
+.search-container .search-wrapper span i{
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    background: var(--orange);
+    height: 4.4rem;
+    width: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search-container .search-wrapper i:hover{
+    color: red;
+}
+
+/* --------------------------------- menu button section --------------------------------- */
+
+#menu-btn{
+    font-size: 3rem;
+    transition: .4s ease-in;
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-btn.fa-times{
+    transform: rotate(360deg);
+    color: red;
+}
+
+/* --------------------------------- login container section --------------------------------- */
+
+.login-container{
+    position: fixed;
+    top: -120%; left: 0; right: 0;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.login-container.active{
+    top: 0;
+}
+
+#user-btn.active{
+    transform: rotate(360deg);
+    color: red;
+}
+
+#form-closed-btn{
+    position: absolute;
+    top: .7rem; right: .7rem;
+    font-size: 3rem;
+    background: var(--black);
+    color: var(--orange);
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+#form-closed-btn:hover{
+    background: var(--orange);
+    color: var(--black);
+}
+
+.login-container form h3{
+    font-size: 4.5rem;
+    letter-spacing: .2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    text-shadow: var(--text-shadow);
+}
+
+.login-container form{
+    border: .2rem solid var(--orange);
+    padding: 2rem;
+    height: 100%;
+    width: 50rem;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 2rem;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.login-container form .box{
+    padding-top: 1.5rem;
+    padding-right: 5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    display: block;
+    width: 100%;
+    margin: 1.2rem 0;
+    border: .1rem solid var(--grey);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.login-container form .box[type="password"],
+.login-container form .box[type="email"]{
+    box-shadow: .2rem .2rem 0 rgba(0, 0, 0, 0.6);
+}
+
+.login-container form .pass-container{
+    position: relative;
+}
+
+.login-container form .email-container{
+    position: relative;
+}
+
+.login-container form .email-container span{
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+}
+
+.login-container form .email-container span i{
+    font-size: 1.9rem;
+    padding: 1.8rem;
+    cursor: pointer;
+}
+
+.login-container form .pass-container span{
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translate(-50%, -50%);
+}
+
+#hide-1{
+    display: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .3rem;
+}
+
+#hide-1.active,
+#hide-2.active{
+    background: var(--orange);
+    padding: .3rem;
+    border-radius: 5rem;
+}
+
+#hide-2{
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .3rem;
+}
+
+#hide-1:hover, #hide-2:hover, #email-at:hover{
+    color: var(--main-color);
+}
+
+.login-container form .box::placeholder{
+    color: var(--black);
+}
+
+.login-container form .box:focus{
+    border-color: var(--orange);
+}
+
+.login-container form .btn{
+    display: block;
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1.6rem 0;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
+.login-container form input[type="checkbox"]{
+    margin: 0 0 1.2rem 0;
+}
+
+.login-container form p, label{
+    margin: 0 0 .2rem 0;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.login-container form a{
+    font-style: normal;
+    padding-left: .3rem;
+}
+
+.login-container form a:hover{
+    text-decoration: underline;
+}
+
+/* --------------------------------- footer section --------------------------------- */
+
+.footer{
+    background: url(../images/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--grey);
+    font-weight: 300;
+    padding: .7rem 0;
+}
+
+.footer .box-container h3{
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+.footer .box-container .box i{
+    padding-right: .7rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+/* --------------------------------- media query section --------------------------------- */
+
+@media screen and (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+@media screen and (max-width: 991px){
+    .header{
+        padding: 2rem 5%;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    section{
+        padding: 2rem 7%;
+    }
+
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0%;
+        padding: 3rem 0;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .4s ease-in-out;
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar ul li{
+        display: block;
+        padding: 2rem 0;
+    }
+
+    .header .navbar ul li a{
+        color: var(--white);
+    }
+
+    .header .icons{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: fixed;
+        bottom: 5rem; right: 2rem;
+        display: block;
+    }
+    
+    .header .icons::before{
+        content: '';
+        height: 20rem; width: .7rem;
+        background: var(--main-color);
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 5rem;
+    }
+    
+    .header .icons .icons-box{
+        background: var(--orange);
+        height: 4.5rem; width: 4.5rem;
+        border-radius: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+    }
+    
+    .header .icons .icons-box i{
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    html{
+        font-size: 50%;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    html{
+        font-size: 45%;
+    }
+}
+
+
+@media screen and (max-width: 320px){
+
+}

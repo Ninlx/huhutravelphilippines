@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon-4.png">
+    <title>wala lang gud ahahaha</title>
+    <meta name="description" content="web development for beginner">
+    <meta name="keywords" content="html, css, javascript">
+    <meta name="author" content="jdm web designer">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ------------------------- header section ------------------------- -->
+
+<section class="header">
+    <div class="logo">
+        <a href="#"><span>T</span>ravel</a>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li class="active"><a href="#">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#package">package</a></li>
+            <li><a href="#book">book</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <div class="icons-box">
+            <i class="fas fa-search" id="search-btn"></i>
+        </div>
+        <div class="icons-box">
+            <i class="fas fa-user" id="user-btn"></i>
+        </div>
+        <div class="icons-box">
+            <i class="fas fa-moon" id="dark-mode-btn"></i>
+        </div>
+    </div>
+
+    <i class="fas fa-bars-staggered" id="menu-btn"></i>
+
+</section>
+
+<div class="search-container">
+    <div class="search-wrapper">
+        <input type="search" name="search" id="search" placeholder="Looking for something?">
+        <span><i class="fas fa-search"></i></span>
+    </div>
+</div>
+
+<div class="login-container">
+    <form action="">
+        <div class="form-closed">
+            <i class="fas fa-times" id="form-closed-btn"></i>
+        </div>
+        <h3>Login</h3>
+        <div class="email-container">
+            <input type="email" name="email" id="email" class="box" placeholder="Email or phone number" required>
+            <span><i class="fa-solid fa-at" id="email-at"></i></span>
+        </div>
+        <div class="pass-container">
+            <input type="password" name="password" id="inputPass" class="box" placeholder="Password">
+            <span onclick="myFuction()">
+                <i id="hide-1" class="fa fa-eye"></i>
+                <i id="hide-2" class="fa fa-eye-slash"></i>
+            </span>
+        </div>
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" name="checkbox" id="remember-me">
+        <label for="checkbox">Remember me</label>
+        <p>forgot password? <a href="#">recover account</a></p>
+        <p>don't have an account? <a href="#">create account now</a></p>
+    </form>
+</div>
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Social links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> Home</a>
+            <a href="#"><i class="fas fa-angle-right"></i> About</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Package</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Book</a>
+        </div>
+        <div class="box">
+            <h3>Social links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> Home</a>
+            <a href="#"><i class="fas fa-angle-right"></i> About</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Package</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Book</a>
+        </div>
+        <div class="box">
+            <h3>Social links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> Home</a>
+            <a href="#"><i class="fas fa-angle-right"></i> About</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Package</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Book</a>
+        </div>
+        <div class="box">
+            <h3>Social links</h3>
+            <a href="#"><i class="fas fa-angle-right"></i> Home</a>
+            <a href="#"><i class="fas fa-angle-right"></i> About</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Package</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Book</a>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------- script section ------------------------- -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
