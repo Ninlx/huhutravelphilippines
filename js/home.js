@@ -58,7 +58,6 @@ window.onscroll = () =>{
     navbar.classList.remove('active')
     searchbtn.classList.remove('active')
     seachcontainer.classList.remove('active')
-    searchbtn2.classList.remove('active')
     hide1.classList.remove('active')
     hide2.classList.remove('active')
     userbtn.classList.remove('active')
