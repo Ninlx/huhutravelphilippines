@@ -49,10 +49,6 @@ section{
     padding: 5rem 10%;
 }
 
-body{
-    height: 200rem;
-}
-
 /* --------------------------------- global class section --------------------------------- */
 
 .btn{
@@ -76,7 +72,7 @@ body{
     top: 0; left: 0; right: 0;
     padding: 2rem 10%;
     background: var(--white);
-    z-index: 5;
+    z-index: 100;
     box-shadow: var(--box-shadow);
     display: flex;
     justify-content: space-between;
@@ -410,6 +406,7 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    margin-top: 8.5rem;
 }
 .footer .box-container{
     display: grid;
