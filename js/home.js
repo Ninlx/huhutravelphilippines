@@ -55,7 +55,6 @@ function myFuction(){
 
 window.onscroll = () =>{
     menu.classList.remove('fa-times')
-    navbar.classList.remove('active')
     searchbtn.classList.remove('active')
     seachcontainer.classList.remove('active')
     hide1.classList.remove('active')
