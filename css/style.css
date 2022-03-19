@@ -12,16 +12,24 @@
 
 :root{
     --main-color: #8e44ad;
+    --orange: #ffa500;
+    --red: #ff0000;
     --black: #222;
     --white: #ffffff;
     --grey: #b9b9b9;
-    --orange: #ffa500;
     --box-shadow: .7rem .7rem .7rem rgba(0,0,0,0.3);
-    --text-shadow: .2rem .2rem .1rem rgba(0,0,0,0.3);
+    --text-shadow: .3rem .5rem .1rem rgba(0,0,0,0.5);
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+}
+
+.dark-mode{
+    --primary-color: #000106;
+    --secondary-color: #fff;
 }
 
 html::-webkit-scrollbar{
-    width: 1.2rem;
+    width: 1.3rem;
 }
 
 html::-webkit-scrollbar-track{
@@ -44,11 +52,9 @@ section{
     padding: 5rem 10%;
 }
 
-body{
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-select: none;
+*::selection{
+    background: var(--main-color);
+    color: var(--white);
 }
 
 /* --------------------------------- global class section --------------------------------- */
@@ -58,8 +64,13 @@ body{
     background: var(--orange);
     color: var(--black);
     box-shadow: var(--box-shadow);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     cursor: pointer;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1rem;
 }
 
 .btn:hover{
@@ -81,7 +92,7 @@ body{
     top: 0; left: 0; right: 0;
     padding: 2rem 10%;
     background: var(--white);
-    z-index: 5;
+    z-index: 7;
     box-shadow: var(--box-shadow);
     display: flex;
     justify-content: space-between;
@@ -146,7 +157,7 @@ body{
 
 .header .icons .icons-box{
     background: var(--orange);
-    height: 4.5rem; width: 4.5rem;
+    height: 4rem; width: 4rem;
     border-radius: 5rem;
     display: flex;
     justify-content: center;
@@ -158,10 +169,6 @@ body{
     cursor: pointer;
 }
 
-.header .icons .icons-box i:hover{
-    color: rgba(0, 0, 0, 0.5);
-}
-
 /* --------------------------------- search container section --------------------------------- */
 
 .search-container{
@@ -171,9 +178,9 @@ body{
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 5;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
 
 .search-container.active{
@@ -182,53 +189,46 @@ body{
 
 #search-btn.active{
     transform: rotate(360deg);
-    color: red;
+    color: var(--red);
 }
 
-.search-container .search-wrapper{
+.search-container form{
     width: 50rem;
+    height: 5rem;
+    margin: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 5rem;
-    box-sizing: var(--box-shadow);
 }
 
-.search-container .search-wrapper input{
+.search-container form .search-box input[type="search"]{
     width: 100%;
     height: 100%;
-    padding-top: 1.2rem;
-    padding-right: 5rem;
-    padding-bottom: 1.2rem;
-    padding-left: 1rem;
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-    color: var(--black);
-    font-weight: 500;
-}
-
-.search-container .search-wrapper input::placeholder{
-    color: var(--black);
-}
-
-.search-container .search-wrapper span i{
+    top: 0; left: 0;
     position: absolute;
-    top: 50%; right: 0;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    cursor: pointer;
-    background: var(--orange);
-    height: 100%;
-    width: 4.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    padding: 0 10rem 0 1.7rem;
+    font-size: 1.6rem;
+    text-transform: none;
 }
 
-.search-container .search-wrapper i:hover{
-    color: red;
+.search-container form .search-box input[type="search"]::placeholder{
+    color: var(--black);
+    letter-spacing: .1rem;
+}
+
+.search-container form .search-box input[type="submit"]{
+    width: 9rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--white);
+    top: 0; right: 0;
+    background: var(--main-color);
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
 }
 
 /* --------------------------------- menu button section --------------------------------- */
@@ -243,7 +243,7 @@ body{
 
 #menu-btn.fa-times{
     transform: rotate(360deg);
-    color: red;
+    color: var(--red);
 }
 
 /* --------------------------------- login container section --------------------------------- */
@@ -265,7 +265,7 @@ body{
 
 #user-btn.active{
     transform: rotate(360deg);
-    color: red;
+    color: var(--red);
 }
 
 #form-closed-btn{
@@ -297,7 +297,7 @@ body{
     padding: 2rem;
     height: 100%;
     width: 50rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: #e2e2e2;
     margin: 2rem;
     position: relative;
     box-shadow: var(--box-shadow);
@@ -339,7 +339,7 @@ body{
 .login-container form .email-container span i{
     font-size: 1.9rem;
     padding: 1.8rem;
-    cursor: pointer;
+    cursor: auto;
 }
 
 .login-container form .pass-container span{
@@ -368,10 +368,6 @@ body{
     padding: .3rem;
 }
 
-#hide-1:hover, #hide-2:hover, #email-at:hover{
-    color: var(--main-color);
-}
-
 .login-container form .box::placeholder{
     color: var(--black);
 }
@@ -382,12 +378,9 @@ body{
 
 .login-container form .btn{
     display: block;
-    width: 50%;
     margin: 2rem auto;
-    padding: 1.6rem 0;
     text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-weight: 600;
+    letter-spacing: .1rem;
 }
 
 .login-container form input[type="checkbox"]{
@@ -408,6 +401,88 @@ body{
 .login-container form a:hover{
     text-decoration: underline;
 }
+
+/* --------------------------------- home section --------------------------------- */
+
+.home{
+    padding: 0;
+}
+
+.home .slide{
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 53.5rem;
+}
+
+.home .slide .content{
+    width: 80rem;
+    display: none;
+}
+
+.home .swiper-slide-active .content{
+    display: inline-block;
+}
+
+.home .slide .content span{
+    font-size: 2.2rem;
+    color: #ebebeb;
+    display: block;
+    padding-bottom: 1rem;
+    text-shadow: var(--text-shadow);
+    animation: fade .2s linear backwards .3s;
+}
+
+.home .slide .content h3{
+    font-size: 6vw;
+    font-weight: 600;
+    color: var(--white);
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    padding: 1rem 0;
+    line-height: 1;
+    animation: fade .2s linear backwards .5s;
+}
+
+.home .slide .content .btn{
+    animation: fade .2s linear backwards .7s;
+}
+
+@keyframes fade {
+    0%{
+        transform: scale(.5);
+        opacity: 0;
+    }    
+}
+
+.home .swiper-button-next,
+.home .swiper-button-prev{
+    left: 0;
+    bottom: 0;
+    top: inherit;
+    right: inherit;
+    height: 5rem;
+    width: 5rem;
+    background: var(--orange);
+    color: var(--black);
+}
+
+.home .swiper-button-next:hover,
+.home .swiper-button-prev:hover{
+    background: var(--main-color);
+    color: var(--black);
+}
+
+.home .swiper-button-next::after,
+.home .swiper-button-prev::after{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
 
 /* --------------------------------- services section --------------------------------- */
 
@@ -430,7 +505,7 @@ body{
 }
 
 .services .box-container .box img{
-    height: 7.5rem;
+    height: 7rem;
 }
 
 .services .box-container .box h3{
@@ -507,6 +582,10 @@ body{
     .header{
         padding: 2rem 5%;
     }
+
+    .home .slide .content h3{
+        font-size: 7.5vw;
+    }
 }
 
 
@@ -514,6 +593,10 @@ body{
 
     #menu-btn{
         display: initial;
+    }
+
+    html{
+        font-size: 53%;
     }
 
     .header .navbar{
@@ -597,6 +680,10 @@ body{
 
 @media screen and (max-width: 425px){
 
+    html{
+        font-size: 50%;
+    }
+
     .footer .footer-author-credit p{
         font-size: 1.7rem;
     }
@@ -608,5 +695,4 @@ body{
 
 
 @media screen and (max-width: 320px){
-
 }
