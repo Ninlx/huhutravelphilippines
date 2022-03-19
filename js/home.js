@@ -16,7 +16,6 @@ searchbtn.addEventListener('click', () =>{
     seachcontainer.classList.toggle('active')
 })
 
-
 const hide1 = document.querySelector('#hide-1')
 const hide2 = document.querySelector('#hide-2')
 hide1.onclick = () =>{
@@ -55,6 +54,7 @@ function myFuction(){
 
 window.onscroll = () =>{
     menu.classList.remove('fa-times')
+    navbar.classList.remove('active')
     searchbtn.classList.remove('active')
     seachcontainer.classList.remove('active')
     hide1.classList.remove('active')
@@ -62,3 +62,12 @@ window.onscroll = () =>{
     userbtn.classList.remove('active')
     logincontainer.classList.remove('active')
 }
+
+var swiper = new Swiper(".home-slider", {
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
