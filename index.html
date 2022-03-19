@@ -11,6 +11,7 @@
     <meta name="author" content="jdm web designer">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 
 <section class="header">
     <div class="logo">
-        <a href="#"><span>T</span>ravel</a>
+        <a href="#"><span>H</span>uhu</a>
     </div>
     <nav class="navbar">
         <ul>
@@ -48,10 +49,12 @@
 <!-- ------------------------- search container section ------------------------- -->
 
 <div class="search-container">
-    <div class="search-wrapper">
-        <input type="search" name="search" id="search" placeholder="Looking for something?">
-        <span><i class="fas fa-search"></i></span>
-    </div>
+    <form action="">
+        <div class="search-box">
+            <input type="search" name="search" id="search" placeholder="Looking for something?">
+            <span><input type="submit" value="search"></span>
+        </div>
+    </form>
 </div>
 
 <!-- ------------------------- login container section ------------------------- -->
@@ -80,6 +83,38 @@
         <p>don't have an account? <a href="#">create account now</a></p>
     </form>
 </div>
+
+<!-- ------------------------- home section ------------------------- -->
+
+<section class="home">
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide" style="background: url(images/home-slide-1.jpg) no-repeat;">
+                <div class="content">
+                    <span>Explore, Discover, Travel</span>
+                    <h3>Travel arround the world.</h3>
+                    <a href="package.html" class="btn">Discover more</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide" style="background: url(images/home-slide-2.jpg) no-repeat;">
+                <div class="content">
+                    <span>Explore, Discover, Travel</span>
+                    <h3>Discover the new places.</h3>
+                    <a href="package.html" class="btn">Discover more</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide" style="background: url(images/home-slide-3.jpg) no-repeat;">
+                <div class="content">
+                    <span>Explore, Discover, Travel</span>
+                    <h3>Make your tour worthwhile.</h3>
+                    <a href="package.html" class="btn">Discover more</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
 
 <!-- ------------------------- services section ------------------------- -->
 
@@ -135,7 +170,7 @@
             <h3>Follow Us</h3>
             <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
             <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="#"><i class="fab fa-facebook-f"></i>&nbsp; Facebook</a>
+            <a target="_blank" href="https://www.facebook.com/jeffern.malinao.90/"><i class="fab fa-facebook-f"></i>&nbsp; Facebook</a>
             <a href="#"><i class="fab fa-linkedin-in"></i> Linkedin</a>
         </div>
         <div class="box">
@@ -153,6 +188,7 @@
 </section>
 
 <!-- ------------------------- script section ------------------------- -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="js/home.js"></script>
 </body>
