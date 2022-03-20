@@ -254,7 +254,7 @@ section{
     position: fixed;
     top: -120%; left: 0; right: 0;
     min-height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,7 +273,7 @@ section{
 #form-closed-btn{
     position: absolute;
     top: 1rem; right: 1rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     background: var(--main-color);
     color: var(--white);
     height: 3.3rem; width: 3.3rem;
@@ -302,7 +302,7 @@ section{
     padding: 2rem;
     height: 100%;
     width: 50rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(rgb(255, 174, 0), rgb(255, 0, 242));
     margin: 2rem;
     position: relative;
     box-shadow: var(--box-shadow);
@@ -377,7 +377,7 @@ section{
 }
 
 .login-container form .box::placeholder{
-    color: var(--black);
+    color: var(--white);
 }
 
 .login-container form .box:focus{
@@ -399,13 +399,13 @@ section{
     margin: 0 0 .2rem 0;
     font-size: 1.4rem;
     font-style: italic;
-    color: var(--black);
+    color: var(--white);
 }
 
 .login-container form a{
     font-style: normal;
     padding-left: .3rem;
-    color: var(--main-color);
+    color: var(--black);
 }
 
 .login-container form a:hover{
@@ -535,6 +535,64 @@ section{
     font-weight: 500;
 }
 
+/* --------------------------------- about section --------------------------------- */
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .about-img{
+    flex: 1 1 41rem;
+}
+
+.about .about-img img{
+    width: 100%;
+}
+
+.about .content{
+    flex: 1 1 41rem;
+}
+
+.about .content{
+    border: .3rem inset var(--orange);
+    padding: 2rem;
+}
+
+.about .content h3{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.about .content h3::before{
+    content: '';
+    height: .9rem; width: 36%;
+    background: var(--black);
+    position: absolute;
+    top: 120%; left: 0;
+    transform: translateY(-50%);
+}
+
+.about .content h3::after{
+    content: '';
+    height: 2.7rem; width: 12%;
+    background: var(--orange);
+    position: absolute;
+    top: 120%; left: 12%;
+    transform: translateY(-50%);
+    border-radius: 0 50% / 0 100%;
+}
+
+.about .content p{
+    font-size: 1.7rem;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
 /* --------------------------------- footer section --------------------------------- */
 
 .footer{
@@ -710,6 +768,20 @@ section{
     .home .swiper-button-prev{
         left: 2rem;
     }
+
+    .about .content h3::before{
+        height: .9rem; width: 26.5%;
+        top: 120%; left: 0;
+    }
+    
+    .about .content h3::after{
+        height: 2.9rem; width: 9%;
+        top: 120%; left: 8.5%;
+    }
+    
+    .about .content p{
+        line-height: 1.5;
+    }
 }
 
 
@@ -739,8 +811,30 @@ section{
     .home .swiper-button-prev{
         left: .7rem;
     }
+
+    .about .content h3::before{
+        height: .9rem; width: 46.2%;
+        top: 120%; left: 0;
+    }
+    
+    .about .content h3::after{
+        height: 2.9rem; width: 15%;
+        top: 120%; left: 15.5%;
+    }
+    
+    .about .content p{
+        line-height: 1.4;
+    }
+
+    #form-closed-btn{
+        font-size: 2.6rem;
+        height: 3.7rem; width: 3.7rem;
+    }
 }
 
 
 @media screen and (max-width: 320px){
+    html{
+        font-size: 45%;
+    }
 }
