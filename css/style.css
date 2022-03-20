@@ -21,11 +21,13 @@
     --text-shadow: .3rem .5rem .1rem rgba(0,0,0,0.5);
     --primary-color: #edf2fc;
     --secondary-color: #212121;
+    --primary-color-dark: #000106;
+    --secondary-color-dark: #fff;
 }
 
 .dark-mode{
-    --primary-color: #000106;
-    --secondary-color: #fff;
+    background: var(--primary-color-dark);
+    color: var(--primary-color);
 }
 
 html::-webkit-scrollbar{
@@ -270,17 +272,21 @@ section{
 
 #form-closed-btn{
     position: absolute;
-    top: .7rem; right: .7rem;
-    font-size: 3rem;
-    background: var(--black);
-    color: var(--orange);
-    padding: 0 .5rem;
+    top: 1rem; right: 1rem;
+    font-size: 2.5rem;
+    background: var(--main-color);
+    color: var(--white);
+    height: 3.3rem; width: 3.3rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
 #form-closed-btn:hover{
-    background: var(--orange);
-    color: var(--black);
+    background: var(--black);
+    color: var(--red);
 }
 
 .login-container form h3{
@@ -289,7 +295,6 @@ section{
     font-weight: bold;
     text-align: center;
     margin: 1rem 0 2rem 0;
-    text-shadow: var(--text-shadow);
 }
 
 .login-container form{
@@ -297,10 +302,11 @@ section{
     padding: 2rem;
     height: 100%;
     width: 50rem;
-    background: #e2e2e2;
+    background: rgba(255, 255, 255, 0.9);
     margin: 2rem;
     position: relative;
     box-shadow: var(--box-shadow);
+    border-radius: 2rem;
 }
 
 .login-container form .box{
@@ -320,6 +326,8 @@ section{
 .login-container form .box[type="password"],
 .login-container form .box[type="email"]{
     box-shadow: .2rem .2rem 0 rgba(0, 0, 0, 0.6);
+    background: transparent;
+    
 }
 
 .login-container form .pass-container{
@@ -373,7 +381,7 @@ section{
 }
 
 .login-container form .box:focus{
-    border-color: var(--orange);
+    border-color: var(--black);
 }
 
 .login-container form .btn{
@@ -391,11 +399,13 @@ section{
     margin: 0 0 .2rem 0;
     font-size: 1.4rem;
     font-style: italic;
+    color: var(--black);
 }
 
 .login-container form a{
     font-style: normal;
     padding-left: .3rem;
+    color: var(--main-color);
 }
 
 .login-container form a:hover{
@@ -416,7 +426,7 @@ section{
     align-items: center;
     background-size: cover !important;
     background-position: center !important;
-    min-height: 53.5rem;
+    min-height: 58.2rem;
 }
 
 .home .slide .content{
@@ -461,14 +471,23 @@ section{
 
 .home .swiper-button-next,
 .home .swiper-button-prev{
-    left: 0;
-    bottom: 0;
+    left: inherit;
+    bottom: 2rem;
     top: inherit;
     right: inherit;
     height: 5rem;
     width: 5rem;
     background: var(--orange);
     color: var(--black);
+    border-radius: 5rem;
+}
+
+.home .swiper-button-next{
+    right: 2rem;
+}
+
+.home .swiper-button-prev{
+    left: 2rem;
 }
 
 .home .swiper-button-next:hover,
@@ -479,7 +498,7 @@ section{
 
 .home .swiper-button-next::after,
 .home .swiper-button-prev::after{
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: bolder;
 }
 
@@ -675,6 +694,22 @@ section{
     .header .icons .icons-box i{
         font-size: 2rem;
     }
+
+    .home .swiper-button-next,
+    .home .swiper-button-prev{
+        left: 0;
+        bottom: 2rem;
+        top: inherit;
+        right: inherit;
+    }
+
+    .home .swiper-button-next{
+        left: 8rem;
+    }
+
+    .home .swiper-button-prev{
+        left: 2rem;
+    }
 }
 
 
@@ -690,6 +725,19 @@ section{
 
     .heading-title{
         font-size: 3.5rem;
+    }
+
+    .home .swiper-button-next,
+    .home .swiper-button-prev{
+        bottom: .7rem;
+    }
+
+    .home .swiper-button-next{
+        left: 6.6rem;
+    }
+
+    .home .swiper-button-prev{
+        left: .7rem;
     }
 }
 
