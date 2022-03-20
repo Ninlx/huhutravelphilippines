@@ -36,21 +36,29 @@ formclosed.onclick = () =>{
     userbtn.classList.remove('active')
 }
 
-function myFuction(){
-    var me = document.getElementById("inputPass")
-    var you = document.getElementById("hide-1")
-    var us = document.getElementById("hide-2")
+function myFunction(){
+    const me = document.getElementById('inputPass')
+    const you = document.getElementById('hide-1')
+    const us = document.getElementById('hide-2')
 
     if(me.type === 'password'){
-        me.type = "text";
-        you.style.display = "block"
-        us.style.display = "none"
+        me.type = 'text'
+        you.style.display = 'block'
+        us.style.display = 'none'
     } else{
-        me.type = "password"
-        you.style.display = "none"
-        us.style.display = "block"
+        me.type = 'password'
+        you.style.display = 'none'
+        us.style.display = 'block'
     }
 }
+
+var swiper = new Swiper(".home-slider", {
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
 window.onscroll = () =>{
     menu.classList.remove('fa-times')
@@ -63,11 +71,7 @@ window.onscroll = () =>{
     logincontainer.classList.remove('active')
 }
 
-var swiper = new Swiper(".home-slider", {
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
+const darkmodeBtn = document.querySelector('#dark-mode-btn')
+darkmodeBtn.addEventListener('click', () =>{
+    darkmodeBtn.classList.toggle('.dark-mode')
+})
