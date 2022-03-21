@@ -4,10 +4,10 @@ $(document).on('click', '.navbar ul li', function(){
 
 const menu = document.querySelector('#menu-btn')
 const navbar = document.querySelector('.navbar')
-menu.onclick = () =>{
+menu.addEventListener('click', () =>{
     menu.classList.toggle('fa-times')
     navbar.classList.toggle('active')
-}
+})
 
 const searchbtn = document.querySelector('#search-btn')
 const seachcontainer = document.querySelector('.search-container')
@@ -45,7 +45,7 @@ function myFunction(){
         me.type = 'text'
         you.style.display = 'block'
         us.style.display = 'none'
-    } else{
+    }else{
         me.type = 'password'
         you.style.display = 'none'
         us.style.display = 'block'
@@ -71,7 +71,15 @@ window.onscroll = () =>{
     logincontainer.classList.remove('active')
 }
 
-const darkmodeBtn = document.querySelector('#dark-mode-btn')
-darkmodeBtn.addEventListener('click', () =>{
-    darkmodeBtn.classList.toggle('.dark-mode')
-})
+let loadmore = document.querySelector('.package .load-more .btn')
+let currentItem = 3
+loadmore.onclick = () =>{
+    let container = [...document.querySelectorAll('.package .box-container .box')]
+    for(var me = currentItem; me < currentItem + 3; me++){
+        container[me].style.display = 'inline-block'
+    }
+        currentItem += 3
+        if(currentItem >= container.length){
+            loadmore.style.display = 'none'
+        }
+}
