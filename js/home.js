@@ -2,12 +2,37 @@ $(document).on('click', '.navbar ul li', function(){
     $(this).addClass('active').siblings().removeClass('active')
 })
 
-const menu = document.querySelector('#menu-btn')
+const hamburger = document.querySelector('#hamburger-menu')
 const navbar = document.querySelector('.navbar')
-menu.addEventListener('click', () =>{
-    menu.classList.toggle('fa-times')
+
+// let menuOpen = false
+
+// hamburger.addEventListener('click', () =>{
+//     if(!menuOpen){
+//         hamburger.classList.add('open')
+//         menuOpen = true
+//         navbar.classList.toggle('active')
+//     }else{
+//         hamburger.classList.remove('open')
+//         menuOpen = false
+//         navbar.classList.remove('active')
+//     }
+// })
+
+hamburger.onclick = () =>{
+    hamburger.classList.toggle('open')
     navbar.classList.toggle('active')
-})
+}
+
+navbar.onclick = () =>{
+    hamburger.classList.remove('open')
+    navbar.classList.remove('active')
+}
+
+window.onscroll = () =>{
+    searchbtn.classList.remove('active')
+    seachcontainer.classList.remove('active')
+}
 
 const searchbtn = document.querySelector('#search-btn')
 const seachcontainer = document.querySelector('.search-container')
@@ -40,7 +65,7 @@ function myFunction(){
     const me = document.getElementById('inputPass')
     const you = document.getElementById('hide-1')
     const us = document.getElementById('hide-2')
-
+    
     if(me.type === 'password'){
         me.type = 'text'
         you.style.display = 'block'
@@ -59,17 +84,6 @@ var swiper = new Swiper(".home-slider", {
         prevEl: ".swiper-button-prev",
     },
 });
-
-window.onscroll = () =>{
-    menu.classList.remove('fa-times')
-    navbar.classList.remove('active')
-    searchbtn.classList.remove('active')
-    seachcontainer.classList.remove('active')
-    hide1.classList.remove('active')
-    hide2.classList.remove('active')
-    userbtn.classList.remove('active')
-    logincontainer.classList.remove('active')
-}
 
 let loadmore = document.querySelector('.package .load-more .btn')
 let currentItem = 3
