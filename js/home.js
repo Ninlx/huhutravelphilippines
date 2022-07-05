@@ -5,20 +5,6 @@ $(document).on("click", ".navbar ul li", function () {
 const hamburger = document.querySelector("#hamburger-menu");
 const navbar = document.querySelector(".navbar");
 
-// let menuOpen = false
-
-// hamburger.addEventListener('click', () =>{
-//     if(!menuOpen){
-//         hamburger.classList.add('open')
-//         menuOpen = true
-//         navbar.classList.toggle('active')
-//     }else{
-//         hamburger.classList.remove('open')
-//         menuOpen = false
-//         navbar.classList.remove('active')
-//     }
-// })
-
 hamburger.onclick = () => {
   hamburger.classList.toggle("open");
   navbar.classList.toggle("active");
